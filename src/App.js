@@ -22,6 +22,13 @@ function App() {
     setPickTwo(null);
     setDisabled(false);
   };
+
+  const handleNewGame = () => {
+    setWins(0);
+    handleTurn();
+    setCards(shuffle);
+  };
+
   useEffect(() => {
     let pickTimer;
 
@@ -64,12 +71,6 @@ function App() {
       handleTurn();
     }
   }, [cards, wins]);
-
-  const handleNewGame = () => {
-    setWins(0);
-    handleTurn();
-    setCards(shuffle);
-  };
 
   return (
     <>
